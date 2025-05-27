@@ -1,0 +1,28 @@
+CREATE TABLE `dataplex-metadata.MEDITECH.Gurrantor`
+(
+  address_line1 STRING,
+  address_line2 STRING,
+  contact STRING,
+  contact_type_id INT64,
+  data_source_id INT64,
+  email STRING,
+  facility_id INT64,
+  fax STRING,
+  first_name STRING,
+  guarantor_id INT64,
+  home_phone STRING,
+  last_name STRING,
+  medicare_card_number STRING,
+  middle_name STRING,
+  mt_updated TIMESTAMP,
+  name STRING,
+  other_phone STRING,
+  relationship_id INT64,
+  suburb_id INT64,
+  title_id INT64,
+  updated_utc TIMESTAMP,
+  visit_id INT64,
+  work_phone STRING,
+  PRIMARY KEY (visit_id) NOT ENFORCED,
+  CONSTRAINT Gurrantor_fk FOREIGN KEY (visit_id) REFERENCES `dataplex-metadata.MEDITECH.Visit`(visit_id) NOT ENFORCED
+);
